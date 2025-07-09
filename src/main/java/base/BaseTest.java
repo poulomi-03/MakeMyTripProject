@@ -18,7 +18,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static JavascriptExecutor js;
-	
+	//--------------------------------------------------------------------------------------
 //	@Parameters("url")
 	@BeforeClass
 	public void DriverSetup() {
