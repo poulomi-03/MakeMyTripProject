@@ -1,4 +1,4 @@
-package base;
+package Base;
 
 import java.time.Duration;
 
@@ -13,7 +13,7 @@ import org.testng.annotations.*;
 import com.beust.jcommander.Parameter;
 
 
-public class BaseTest {
+public class Base_Test {
 	
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -30,10 +30,12 @@ public class BaseTest {
 	}
 	
 	@BeforeMethod
-	public static void closePopup() {
+	public static void goToHomePage() {
 		String baseUrl = "https://www.makemytrip.com/";
 		driver.get(baseUrl); // Open MakemyTrip Home page.
         String currentUrl = driver.getCurrentUrl();
+        
+        // Validate
         if (!currentUrl.equals(baseUrl)) {
             System.out.println("Remarks: Failed to navigate to "+baseUrl+"Current URL is: "+currentUrl);
         }
@@ -43,10 +45,6 @@ public class BaseTest {
         driver.findElement(By.xpath("//span[@data-cy='closeModal']")).click(); // Close popup
 	}
 	
-
-	
-	//code added by Poulomi
-	//added by Poulomi again
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
