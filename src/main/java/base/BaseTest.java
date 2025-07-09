@@ -18,7 +18,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static JavascriptExecutor js;
-	//--------------------------------------------------------------------------------------
+	
 //	@Parameters("url")
 	@BeforeClass
 	public void DriverSetup() {
@@ -34,8 +34,6 @@ public class BaseTest {
 		String baseUrl = "https://www.makemytrip.com/";
 		driver.get(baseUrl); // Open MakemyTrip Home page.
         String currentUrl = driver.getCurrentUrl();
-        
-        // Validate
         if (!currentUrl.equals(baseUrl)) {
             System.out.println("Remarks: Failed to navigate to "+baseUrl+"Current URL is: "+currentUrl);
         }
@@ -45,11 +43,6 @@ public class BaseTest {
         driver.findElement(By.xpath("//span[@data-cy='closeModal']")).click(); // Close popup
 	}
 	
-//	@AfterMethod
-//	public void goToHomePage() {
-//		driver.get("https://www.makemytrip.com/");	
-//	}
-//	
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
