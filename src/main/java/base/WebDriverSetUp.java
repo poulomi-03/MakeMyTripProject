@@ -6,7 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverSetUp {
-
+//-------------------------------------------------------------------
 	public static WebDriver driver;
 	public static WebDriver setupDriver(String browser) {
 		System.out.println("STEP 1: Attempting to open the "+browser+" browser.");
