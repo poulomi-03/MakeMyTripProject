@@ -28,7 +28,7 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         js = (JavascriptExecutor) driver;
 	}
-	
+	// --------------------------------------------------------
 	@BeforeMethod
 	public static void closePopup() {
 		String baseUrl = "https://www.makemytrip.com/";
