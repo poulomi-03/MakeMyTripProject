@@ -44,6 +44,8 @@ public class BaseTest {
 	}
 	
 
+	
+	//code added by Poulomi
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
