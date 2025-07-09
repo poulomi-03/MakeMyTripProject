@@ -30,7 +30,7 @@ public class BaseTest {
 	}
 	
 	@BeforeMethod
-	public static void closePopup() {
+	public static void goToHomePage() {
 		String baseUrl = "https://www.makemytrip.com/";
 		driver.get(baseUrl); // Open MakemyTrip Home page.
         String currentUrl = driver.getCurrentUrl();
