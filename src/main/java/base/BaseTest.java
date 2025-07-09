@@ -1,4 +1,4 @@
-package Base;
+package base;
 
 import java.time.Duration;
 
@@ -13,7 +13,7 @@ import org.testng.annotations.*;
 import com.beust.jcommander.Parameter;
 
 
-public class Base_Test {
+public class BaseTest {
 	
 	public static WebDriver driver;
 	public static WebDriverWait wait;
