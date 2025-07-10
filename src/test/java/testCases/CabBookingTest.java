@@ -99,20 +99,19 @@ public class CabBookingTest extends BaseTest{
 
 	@Test(dataProvider = "testData")
 	public static void verifyTripTypeInResults(String section, String tripType, String city, String destination, String date, String time, String carType) {
-		Scenario1Steps s = new Scenario1Steps();
-		s.selectSection(section);
-		s.selectTripType(tripType);
-		s.clickFromField();
-		s.selectCityFromSuggestion(city);
-		s.clickToField();
-		s.enterDestination(destination);
-		s.selectDestinationFromSuggestion(destination);
-		s.clickdeparture();
+		cabBookingPage.selectSection(section);
+		cabBookingPage.selectTripType(tripType);
+		cabBookingPage.clickFromField();
+		cabBookingPage.selectCityFromSuggestion(city);
+		cabBookingPage.clickToField();
+		cabBookingPage.enterDestination(destination);
+		cabBookingPage.selectDestinationFromSuggestion(destination);
+		cabBookingPage.clickdeparture();
         Methods.datePicker(date);
-        s.clickPickupTime();
+        cabBookingPage.clickPickupTime();
         Methods.timePicker(time);
-        s.search();
-        s.closePackagesPopup();
+        cabBookingPage.search();
+        cabBookingPage.closePackagesPopup();
         
         String expectedTripType = tripType;
         String actualTripType = driver.findElement(By.id("trip_type")).getAttribute("value");
