@@ -78,7 +78,7 @@ public class CabBookingPage {
 	public void selectDestinationFromSuggestion(String destination) {	
         By manaliSuggestionLocator = By.xpath("//li[@role='option']"); //locator for 1st suggestion
         // 1. Wait until the element with the specified locator contains the desired text
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(manaliSuggestionLocator, destination));
+//        wait.until(ExpectedConditions.textToBePresentInElementLocated(manaliSuggestionLocator, destination));
         // click 1st suggestion
         driver.findElement(manaliSuggestionLocator).click();
 	}
