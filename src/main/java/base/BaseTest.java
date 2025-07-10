@@ -12,14 +12,15 @@ import org.testng.annotations.*;
 
 import com.beust.jcommander.Parameter;
 
+import pages.CabBookingPage;
 
 public class BaseTest {
 	
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static JavascriptExecutor js;
+	public static CabBookingPage cabBookingPage;
 	
-//	@Parameters("url")
 	@BeforeClass
 	public void DriverSetup() {
 		driver = WebDriverSetUp.setupDriver("chrome");
@@ -27,8 +28,9 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         js = (JavascriptExecutor) driver;
+        cabBookingPage = new CabBookingPage(driver);
 	}
-	
+
 	@BeforeMethod
 	public static void goToHomePage() {
 		String baseUrl = "https://www.makemytrip.com/";
@@ -45,8 +47,8 @@ public class BaseTest {
         driver.findElement(By.xpath("//span[@data-cy='closeModal']")).click(); // Close popup
 	}
 	
-	@AfterClass
-	public void tearDown() {
-		driver.quit();
-	}
+//	@AfterClass
+//	public void tearDown() {
+//		driver.quit();
+//	}
 }
