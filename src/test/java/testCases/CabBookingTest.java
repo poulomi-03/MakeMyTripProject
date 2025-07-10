@@ -1,17 +1,16 @@
 package testCases;
 
 import java.util.List;
-import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-import utils.Methods;
 import base.BaseTest;
 //import pages.CabBookingPage;
+import utils.Methods;
 
 public class CabBookingTest extends BaseTest{
 	
@@ -96,6 +95,9 @@ public class CabBookingTest extends BaseTest{
         	System.out.println("Cleared all filters");
         }   
 	}
+	
+	
+	//Change the code and modify it 
 
 	@Test(dataProvider = "testData")
 	public static void verifyTripTypeInResults(String section, String tripType, String city, String destination, String date, String time, String carType) {
